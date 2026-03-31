@@ -10,7 +10,21 @@ O **Nexus IA** é um projeto web inovador que combina uma vitrine de jogos (como
 - **Assistente Virtual Integrado:** Chat dinâmico em cada página de jogo, conectado a uma API de Inteligência Artificial para respostas contextuais.
 - **Arquitetura Modular:** Código estruturado com separação clara de responsabilidades (HTML, CSS e Vanilla JavaScript).
 
-## 🛠️ Tecnologias Utilizadas
+### 📸 Demonstração Visual
+
+- **Interface Principal:**
+
+https://github.com/user-attachments/assets/07b1cd3b-5559-4b95-a930-0d1077d03b6f
+
+- **Funcionamento do Chatbot:**
+  
+https://github.com/user-attachments/assets/0d5570de-7fc9-4057-adc3-65bd5cbf8a77
+
+## 🛠️ Tecnologias Utiliz
+
+
+
+adas
 
 **Front-end:**
 - HTML5
