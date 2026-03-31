@@ -1,0 +1,245 @@
+/* Fontes para Elden Ring */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* ESTILOS GERAIS */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+    background-color: #050508; 
+    background-size: cover;
+    color: #d1c4a9; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+/* LIVE WALLPAPER (BACKGROUND) */
+.video-bg {
+    position: fixed !important; 
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; 
+    z-index: -2; 
+    pointer-events: none; 
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at center, rgba(10, 10, 12, 0.4) 0%, rgba(5, 5, 8, 0.9) 100%);
+    z-index: 0;
+}
+
+/* Botão de Voltar ao Nexus */
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #d1c4a9;
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border: 1px solid #c5a867; 
+    border-radius: 4px;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: rgba(197, 168, 103, 0.2);
+    color: #eaddb6;
+    box-shadow: 0 0 15px rgba(197, 168, 103, 0.4);
+}
+
+/* --- ÁREA DO CHAT --- */
+.chat-container {
+    width: 100%;
+    max-width: 800px;
+    height: 85vh;
+    background: rgba(15, 15, 18, 0.85); 
+    border: 2px solid #3a3222;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.9), inset 0 0 20px rgba(197, 168, 103, 0.05);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    position: relative;
+}
+
+.chat-container::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #c5a867, transparent);
+}
+
+/* Cabeçalho */
+.app-header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #3a3222;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid #c5a867;
+    margin-right: 20px;
+    object-fit: cover;
+    box-shadow: 0 0 15px rgba(197, 168, 103, 0.3);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-name {
+    font-family: 'Cinzel', serif;
+    color: #eaddb6;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(197, 168, 103, 0.3);
+}
+
+.contact-status {
+    color: #8a7b5d;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+/* Área de Mensagens */
+.chat-messages {
+    flex-grow: 1;
+    padding: 30px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Balões de Mensagem */
+.bubble-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+.bubble-wrapper.bot {
+    align-self: flex-start;
+}
+
+.bubble-wrapper.user {
+    align-self: flex-end;
+    align-items: flex-end;
+}
+
+.bubble-sender {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    color: #8a7b5d;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.bubble {
+    padding: 15px 25px;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    background: rgba(25, 25, 30, 0.6);
+    border: 1px solid #3a3222;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.bubble-wrapper.bot .bubble {
+    border-left: 3px solid #c5a867; 
+    color: #eaddb6;
+}
+
+.bubble-wrapper.user .bubble {
+    border-right: 3px solid #5a5a60;
+    color: #b0b0b5;
+    background: rgba(20, 20, 25, 0.8);
+}
+
+/* Escrevendo */
+.typing-indicator {
+    font-style: italic;
+    color: #c5a867;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.4; }
+    50% { opacity: 1; text-shadow: 0 0 10px rgba(197, 168, 103, 0.5); }
+    100% { opacity: 0.4; }
+}
+
+/* Área de Digitação */
+.input-area {
+    background: rgba(10, 10, 12, 0.9);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px solid #3a3222;
+}
+
+.input-area input {
+    flex-grow: 1;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #3a3222;
+    color: #eaddb6;
+    padding: 15px 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    border-radius: 2px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-area input:focus {
+    border-color: #c5a867;
+    box-shadow: 0 0 10px rgba(197, 168, 103, 0.2);
+}
+
+.send-btn {
+    background-color: transparent;
+    color: #c5a867;
+    border: 1px solid #c5a867;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.send-btn:hover {
+    background-color: rgba(197, 168, 103, 0.2);
+    box-shadow: 0 0 15px rgba(197, 168, 103, 0.4);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: rgba(0,0,0,0.5); border-left: 1px solid #3a3222; }
+::-webkit-scrollbar-thumb { background: #5a4b2c; }
+::-webkit-scrollbar-thumb:hover { background: #c5a867; }

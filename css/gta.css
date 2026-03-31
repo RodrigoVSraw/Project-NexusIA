@@ -1,0 +1,191 @@
+/* Fonte para GTA V */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* ESTILOS GERAIS */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: url('/Imgs/bg_gta.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.4); 
+    z-index: 0;
+}
+
+/* Botão para voltar ao Nexus */
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    border-radius: 8px;
+    z-index: 10;
+    transition: background 0.3s;
+}
+
+.back-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* --- O CELULAR (ÁREA DO CHAT) --- */
+.phone-container {
+    width: 380px;
+    height: 800px;
+    background-color: #121212;
+    border-radius: 40px;
+    border: 12px solid #1a1a1a;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), inset 0 0 10px rgba(255, 255, 255, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    overflow: hidden;
+}
+
+/* O alto-falante do celular */
+.notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 25px;
+    background-color: #1a1a1a;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    z-index: 20;
+}
+
+/* Cabeçalho do App de Mensagens */
+.app-header {
+    background-color: #1c2b1e;
+    padding: 35px 20px 15px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #2a3d2c;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #333;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-name {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.contact-status {
+    color: #8bbd8e;
+    font-size: 0.8rem;
+}
+
+/* Área de Mensagens */
+.chat-messages {
+    flex-grow: 1;
+    background-color: #0d110e;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Balões de Mensagem */
+.bubble {
+    max-width: 80%;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.bubble.bot {
+    align-self: flex-start;
+    background-color: #2e3a30; 
+    color: #ffffff;
+    border-radius: 18px 18px 18px 4px;
+}
+
+.bubble.user {
+    align-self: flex-end;
+    background-color: #4a8251; 
+    color: #ffffff;
+    border-radius: 18px 18px 4px 18px;
+}
+
+/* "Digitando..." */
+.typing-indicator {
+    font-style: italic;
+    color: #8bbd8e;
+    font-size: 0.9rem;
+}
+
+/* Área de Digitação */
+.input-area {
+    background-color: #1c2b1e;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-top: 1px solid #2a3d2c;
+}
+
+.input-area input {
+    flex-grow: 1;
+    background-color: #0d110e;
+    border: 1px solid #2a3d2c;
+    color: white;
+    padding: 12px 15px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.input-area input:focus {
+    border-color: #4a8251;
+}
+
+.send-btn {
+    background-color: transparent;
+    color: #4a8251;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+.send-btn:hover {
+    color: #61a969;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 0px; background: transparent; }

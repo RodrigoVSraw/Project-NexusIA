@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus de Guias IA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+    <!-- Barra Lateral -->
+    <nav id="sidebar" class="sidebar">
+        <div class="sidebar-top">
+            <button id="menu-toggle" class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="hide-when-closed">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Pesquisar guia...">
+                </div>
+
+                <ul class="nav-links">
+                    <li>
+                        <a href="index.html" class="menu-link active">
+                            <i class="fas fa-home"></i>
+                            <span class="text-label">Início</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Barra (Configurações) -->
+        <div class="sidebar-bottom">
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="#" class="menu-link settings-btn">
+                        <i class="fas fa-cog"></i>
+                        <span class="text-label">Configurações</span>
+                        <i class="fas fa-chevron-down chevron"></i>
+                    </a>
+                    
+                    <ul class="submenu">
+                        <li>
+                            <a href="#" id="theme-toggle">
+                                <i class="fas fa-moon"></i> 
+                                <span>Mudar Tema</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <div id="main-content" class="main-content">
+        <header>
+            <h1>Nexus IA</h1>
+            <p class="subtitle">Selecione o seu Guia de Sobrevivência</p>
+        </header>
+        
+        <div class="grid-container">
+            <a href="zelda.html" class="card">
+                <div class="card-img img-zelda"></div>
+                <div class="card-content">
+                    <h2 class="card-title">Zelda: OoT</h2>
+                    <span class="card-ai">Fada Guia: Navi</span>
+                </div>
+            </a>
+
+            <a href="gta.html" class="card">
+                <div class="card-img img-gta"></div>
+                <div class="card-content">
+                    <h2 class="card-title">Grand Theft Auto V</h2>
+                    <span class="card-ai">Contato: Lester Crest</span>
+                </div>
+            </a>
+
+            <a href="eldenring.html" class="card">
+                <div class="card-img img-elden"></div>
+                <div class="card-content">
+                    <h2 class="card-title">Elden Ring</h2>
+                    <span class="card-ai">Guia: Melina</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>

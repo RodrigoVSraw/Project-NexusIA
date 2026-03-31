@@ -1,0 +1,380 @@
+/* ESTILOS GERAIS */
+body {
+    background-color: #0f1115; 
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* --- BARRA LATERAL --- */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90px; 
+    height: 100vh;
+    background-color: transparent; 
+    border-right: none; 
+    box-shadow: none; 
+    transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.4s, box-shadow 0.4s;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    padding: 20px 15px;
+    box-sizing: border-box;
+    overflow: visible; 
+}
+
+/* Barra lateral aberta */
+.sidebar.open {
+    width: 300px; 
+    background-color: #1a1e24; 
+    border-right: 1px solid #2a3038;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Divisões internas da barra */
+.sidebar-top {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-bottom {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Botão de Menu */
+.menu-toggle {
+    background: none;
+    border: none;
+    color: #8a9199;
+    font-size: 2rem; 
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 60px; 
+    height: 60px; 
+    border-radius: 12px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-toggle:hover {
+    color: #00d2ff;
+    background-color: rgba(0, 210, 255, 0.1);
+}
+
+/* Esconde os botões quando a barra está fechada */
+.sidebar:not(.open) .hide-when-closed {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    height: 0;
+    overflow: hidden;
+}
+
+/* Mostra os botões quando a barra abre */
+.sidebar.open .hide-when-closed {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    height: auto;
+    margin-top: 20px;
+    transition: opacity 0.4s 0.2s ease; 
+}
+
+/* Barra de Pesquisa */
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 0 15px;
+    height: 50px;
+    border: 1px solid #2a3038;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px; 
+}
+
+.search-box i {
+    min-width: 30px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #8a9199;
+    margin-right: 15px;
+}
+
+.search-box input {
+    background: transparent;
+    border: none;
+    color: inherit;
+    outline: none;
+    width: 100%;
+    font-size: 1.1rem;
+    font-family: inherit;
+}
+
+/* Links do Menu */
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-links a.menu-link {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    text-decoration: none;
+    color: #8a9199;
+    padding: 0 15px; 
+    border-radius: 12px; 
+    font-size: 1.2rem;
+    font-weight: 500;
+    width: 60px; 
+    height: 60px; 
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all 0.3s ease, width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.sidebar.open .nav-links a.menu-link {
+    width: 100%;
+}
+
+.nav-links a.menu-link i:not(.chevron) {
+    min-width: 30px; 
+    font-size: 1.6rem; 
+    text-align: center;
+}
+
+.nav-links a.menu-link:hover, .nav-links a.active {
+    background-color: rgba(0, 210, 255, 0.1);
+    color: #00d2ff;
+}
+
+.text-label {
+    flex-grow: 1; 
+    text-align: left;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.sidebar.open .text-label {
+    opacity: 1;
+    transition: opacity 0.4s 0.2s; 
+}
+
+/* --- JANELA DO BOTÃO CONFIG --- */
+.submenu {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    position: absolute;
+    background-color: #22272e;
+    border: 1px solid #2a3038;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+.submenu a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #8a9199;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.submenu a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+}
+
+/* Comportamento 1: config com barra fechada */
+.sidebar:not(.open) .submenu {
+    bottom: 0; 
+    left: 100%;
+    margin-left: 15px;
+    width: 220px;
+}
+.sidebar:not(.open) .submenu::before {
+    content: ''; position: absolute; bottom: 0; left: -15px; width: 15px; height: 100%; background: transparent;
+}
+
+/* Comportamento 2: config com barra aberta */
+.sidebar.open .submenu {
+    bottom: 100%; 
+    left: 0;
+    margin-bottom: 5px; 
+    width: 100%;
+}
+.sidebar.open .submenu::before {
+    content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 5px; background: transparent;
+}
+
+/* Animação do Hover e da Seta */
+.nav-item:hover .submenu {
+    display: flex;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.nav-item:hover .chevron {
+    transform: rotate(180deg);
+}
+
+.chevron {
+    transition: transform 0.3s ease;
+    font-size: 1rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); } 
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% - 90px); 
+    margin-left: 90px;
+    transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1), margin-left 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.main-content.shifted {
+    width: calc(100% - 300px);
+    margin-left: 300px;
+}
+
+header {
+    margin-top: 60px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+p.subtitle {
+    color: #8a9199;
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+}
+
+.grid-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    padding: 0 20px;
+    margin-bottom: 50px;
+}
+
+.card {
+    background-color: #1a1e24;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 280px;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid #2a3038;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    border-color: #4a5568;
+    box-shadow: 0 0 30px rgba(254, 254, 254, 0.95);  
+}
+
+.card-img {
+    height: 400px;
+    background-color: #2a3038;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid #2a3038;
+}
+
+.card-content {
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(to top, #1a1e24, #22272e);
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+    letter-spacing: 1px;
+}
+
+.card-ai {
+    color: #00d2ff;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.img-zelda { background-image: url('/Imgs/capas/capa_zelda.jpeg'); }
+.img-gta { background-image: url('/Imgs/capas/capa_gta.jpg'); }
+.img-elden { background-image: url('/Imgs/capas/capa_eldenring.jpg'); }
+
+/* --- TEMA CLARO --- */
+body.light-theme { background-color: #f4f6f8; color: #1a1e24; }
+
+body.light-theme .sidebar { 
+    background-color: transparent; 
+    border-right: none; 
+    box-shadow: none; 
+}
+
+body.light-theme .sidebar.open { 
+    background-color: #ffffff; 
+    border-right: 1px solid #e1e4e8; 
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1); 
+}
+
+body.light-theme .search-box { 
+  background-color: #f4f6f8; 
+  border: 1px solid #e1e4e8; 
+}
+body.light-theme .nav-links a.menu-link:hover, body.light-theme .nav-links a.active { background-color: rgba(0, 123, 255, 0.1); color: #007bff; }
+body.light-theme .submenu { background-color: #ffffff; border: 1px solid #e1e4e8; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); }
+body.light-theme .submenu a:hover { background-color: #f4f6f8; color: #007bff; }
+body.light-theme .card { background-color: #ffffff; border: 1px solid #e1e4e8; color: #1a1e24; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); }
+body.light-theme .card-content { background: #ffffff; }
+body.light-theme .card-ai { color: #007bff; }
+body.light-theme h1 { text-shadow: none; color: #1a1e24; }
+body.light-theme p.subtitle { color: #5c636a; }
+body.light-theme .card:hover { box-shadow: 0 0 40px rgba(57, 90, 236, 0.9); }

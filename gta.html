@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagens - Lester</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/gta.css">
+</head>
+<body>
+
+    <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Voltar ao Nexus</a>
+
+    <div class="phone-container">
+        <div class="notch"></div>
+        
+        <div class="app-header">
+            <img src="Imgs/lester.jpg" alt="Lester" class="avatar" onerror="this.src='https://via.placeholder.com/50/333333/FFFFFF?text=L'">
+            <div class="contact-info">
+                <span class="contact-name">Lester Crest</span>
+                <span class="contact-status">Online (Rede Segura)</span>
+            </div>
+        </div>
+
+        <div class="chat-messages" id="chat-messages">
+            <div class="bubble bot">
+                E aí. Tenho um trabalho para você, se estiver a fim de ganhar um dinheiro limpo... ou quase isso. O que você precisa?
+            </div>
+        </div>
+
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="Mensagem de texto..." autocomplete="off">
+            <button class="send-btn" id="send-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+    <script src="js/gta.js"></script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+/* Fontes para Zelda */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+/* ESTILOS GERAIS */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'VT323', monospace;
+  background: url('/Imgs/bg_zelda.png') no-repeat 20% center fixed;
+  background-size: cover;
+  color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.25); 
+  z-index: 0; 
+}
+
+/* --- BOTÃO DE VOLTAR AO NEXUS --- */
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #d4af37;
+  text-decoration: none;
+  font-family: 'VT323', monospace;
+  font-size: 24px;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 5px 15px;
+  border: 2px solid #d4af37;
+  border-radius: 5px;
+  z-index: 20;
+  transition: 0.2s;
+}
+
+.back-btn:hover {
+  background: #d4af37;
+  color: #000;
+}
+
+/* --- BANNER SUPERIOR --- */
+.main-banner {
+  background-color: rgba(10, 15, 10, 0.85);
+  border-bottom: 4px solid #d4af37; 
+  color: white;
+  padding: 30px 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.brand-main {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 20px;
+  color: #d4af37;
+  text-shadow: 2px 2px 0px #000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.triforce-icon {
+  width: 24px;
+  height: 24px;
+  fill: #d4af37;
+  filter: drop-shadow(2px 2px 0px #000);
+}
+
+/* --- ÁREA DO CHAT --- */
+.chat-wrapper {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 10; 
+}
+
+.chat-container {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(5px); 
+  border: 4px solid #d4af37;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 680px; 
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.chat-messages {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 24px;
+}
+
+.message-wrapper {
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+  max-width: 90%;
+}
+
+.message-wrapper.bot {
+  align-self: flex-start;
+  flex-direction: row;
+}
+
+.message-wrapper.user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid #d4af37;
+  background-color: #000;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.message {
+  padding: 15px;
+  line-height: 1.2;
+  border: 2px solid;
+}
+
+.message.bot {
+  background-color: rgba(40, 40, 40, 0.95);
+  color: #ffffff;
+  border-color: #d4af37;
+  border-radius: 10px 10px 10px 0;
+}
+
+.message.user {
+  background-color: rgba(20, 60, 20, 0.95);
+  color: #a8e6cf;
+  border-color: #a8e6cf;
+  border-radius: 10px 10px 0 10px;
+}
+
+/* --- ANIMAÇÃO DE ENVIO DE MENSAGENS "DIGITANDO" --- */
+@keyframes bouncing-dots {
+  0% { content: ' .'; }
+  33% { content: ' ..'; }
+  66% { content: ' ...'; }
+  100% { content: ' .'; }
+}
+
+.message.bot.typing {
+  font-style: italic;
+  color: #d4af37; 
+}
+
+.message.bot.typing::after {
+  content: ' .';
+  display: inline-block;
+  animation: bouncing-dots 1.5s infinite;
+}
+
+/* Área de Digitação */
+.chat-input-area {
+  display: flex;
+  padding: 15px;
+  background-color: rgba(20, 20, 20, 0.95);
+  border-top: 4px solid #d4af37;
+}
+
+.chat-input-area input {
+  flex-grow: 1;
+  background: #000;
+  border: 2px solid #d4af37;
+  padding: 15px;
+  font-family: 'VT323', monospace;
+  font-size: 24px;
+  color: #fff;
+  border-radius: 5px;
+  outline: none;
+}
+
+.chat-input-area button {
+  background-color: #aa0000; 
+  border: 2px solid #ff5555;
+  color: white;
+  width: 60px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.2s;
+}
+
+.chat-input-area button:hover {
+  background-color: #ff0000;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: rgba(0,0,0,0.5); border-left: 2px solid #d4af37; }
+::-webkit-scrollbar-thumb { background: #d4af37; }
