@@ -20,11 +20,7 @@ https://github.com/user-attachments/assets/07b1cd3b-5559-4b95-a930-0d1077d03b6f
   
 https://github.com/user-attachments/assets/0d5570de-7fc9-4057-adc3-65bd5cbf8a77
 
-## 🛠️ Tecnologias Utiliz
-
-
-
-adas
+## 🛠️ Tecnologias Utilizadas
 
 **Front-end:**
 - HTML5
