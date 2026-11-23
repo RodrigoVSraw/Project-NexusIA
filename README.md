@@ -4,11 +4,13 @@
 
 O **Nexus IA** é um projeto web inovador que combina uma vitrine de jogos (como *Elden Ring*, *The Legend of Zelda* e *GTA*) com um assistente virtual integrado. O objetivo é proporcionar aos usuários uma experiência imersiva, onde eles podem explorar detalhes dos jogos e interagir em tempo real com uma IA para tirar dúvidas, pedir dicas ou debater sobre o universo dos games.
 
-## 🚀 Funcionalidades
+### 🚀 Funcionalidades
 
 - **Catálogo Temático:** Páginas dedicadas e estilizadas para diferentes jogos, com design responsivo.
 - **Assistente Virtual Integrado:** Chat dinâmico em cada página de jogo, conectado a uma API de Inteligência Artificial para respostas contextuais.
 - **Arquitetura Modular:** Código estruturado com separação clara de responsabilidades (HTML, CSS e Vanilla JavaScript).
+
+---
 
 ### 📸 Demonstração Visual
 
@@ -20,7 +22,9 @@ https://github.com/user-attachments/assets/07b1cd3b-5559-4b95-a930-0d1077d03b6f
   
 https://github.com/user-attachments/assets/0d5570de-7fc9-4057-adc3-65bd5cbf8a77
 
-## 🛠️ Tecnologias Utilizadas
+---
+
+### 🛠️ Tecnologias Utilizadas
 
 **Front-end:**
 - HTML5
@@ -29,15 +33,17 @@ https://github.com/user-attachments/assets/0d5570de-7fc9-4057-adc3-65bd5cbf8a77
 
 **Back-end:**
 - Node.js (Servidor local `server.js`)
-- Integração com API de Inteligência Artificial Generativa
+- Integração com API de Inteligência Artificial Generativa do Google(Gemini)
 
-## ⚙️ Como rodar o projeto localmente
+---
+
+### ⚙️ Como rodar o projeto localmente
 
 Para executar o Nexus IA na sua máquina, siga os passos abaixo:
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/RodrigoVSraw/Project-NexusIA.git](https://github.com/RodrigoVSraw/Project-NexusIA.git)
+   git clone https://github.com/RodrigoVSraw/Project-NexusIA.git
    ```
 
 2. **Acesse a pasta do projeto:**
@@ -65,6 +71,14 @@ Para executar o Nexus IA na sua máquina, siga os passos abaixo:
 
 6. **Acesse no navegador:**
    Abra o seu navegador e acesse a porta configurada (ex: `http://localhost:3000`).
+
+---
+
+### 🗺️ Próximos Passos (Em andamento)
+
+- [ ] Migração do backend de Node.js para **Java**
+- [ ] Separação dos serviços e configurações de IA em **Python**
+- [ ] Implementação de persistência de dados com banco **SQL**
 
 ---
 
